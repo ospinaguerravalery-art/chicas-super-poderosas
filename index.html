@@ -1,11 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAGÜ - Guía Turística</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f5f1e7;
+      font-family: 'Poppins', sans-serif;
+      color: #2e2e2e;
+    }
+
+    .navbar {
+      background-color: #f5f1e7 !important;
+    }
+
+    .text-tagu {
+      color: #0E3322 !important; 
+    }
+
+    .nav-link {
+      color: #000 !important;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background-color: #e0dbd0;
+      border-radius: 8px;
+    }
+
+    .btn-login, .btn-register {
+      background-color: transparent;
+      border: 2px solid #0E3322;
+      color: #0E3322;
+      border-radius: 25px;
+      padding: 6px 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login:hover, .btn-register:hover {
+      background-color: #0E3322;
+      color: #fff;
+    }
+
+    .content-box {
+      border: 1px solid #cfcfcf;
+      background-color: #f9f7f2;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 260px;
+      object-fit: contain; /* mantiene proporción sin recortar */
+      border-radius: 6px;
+      background-color: #eaeaea;
+    }
+
+    .btn-custom {
+      background-color: #ddd;
+      color: #333;
+      border: none;
+      margin-right: 5px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      padding: 5px 12px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #0E3322;
+      color: white;
+    }
+
+    .info-box {
+      margin-top: 10px;
+      text-align: left;
+      background: #fff;
+      border-radius: 6px;
+      padding: 10px 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .location {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #000;
+    }
+
+    footer {
+      background-color: #f5f1e7;
+      border-top: 1px solid #ccc;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.jpg" alt="Logo de TAGÜ" style="height: 40px; margin-right: 8px;">
+        <span class="fw-bold text-tagu">TAGÜ</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link active" href="#">Restaurantes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ruta para llegar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Guía turística</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Lugares turísticos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Actividades y Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cultura y Historia</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login me-2">Iniciar sesión</button>
+          <button class="btn btn-register">Regístrate</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+
+    <!-- ===== FILA 1 ===== -->
+    <div class="row">
+
+      <!-- LUGARES -->
+      <div class="col-md-6 content-box">
+        <div class="section-header">
+          <div>
+            <button class="btn btn-custom">Museos</button>
+            <button class="btn btn-custom">Parques</button>
+            <button class="btn btn-custom">Centros comerciales</button>
+            <button class="btn btn-custom">Bibliotecas</button>
+          </div>
+        </div>
+
+        <div id="carouselLugares" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-description="El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural." data-location="📍 Cra. 57 #46c35, Fátima, Itagüí.">
+              <img src="museo comunitario.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="La Casa Museo Ditaires o Casa Museo Diego Echavarría
+             Misas está ubicada en el barrio Ditaires de Itagüí (Colombia). Se estableció en la antigua
+            residencia del filántropo Diego Echavarría Misas, la cual ha sido conservada y restaurada
+            por el gobierno local desde 1965, manteniendo su estructura original y pertenencias." data-location="📍 Dirección: Pilsen, Itagüi, Antioquia">
+              <img src="museo ditaires bueno.webp" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="En acto protocolario encabezado por el alcalde de Itagüí, José Fernando
+             Escobar y que contó con la presencia del gobernador de Antioquia, Aníbal Gaviria, el director del Área Metropolitana, 
+             Juan David Palacios, entre otras personalidades, se dio apertura al Museo Centro Cultural Caribe, primer museo 
+             público de estas características en la ciudad y que se convertirá en un referente del arte y la cultura a
+             nivel departamental y nacional.
+
+" data-location="📍 Dirección: El gran Centro Cultural Caribe ">
+              <img src="Museo Caribe Itagüí 2.jpeg" alt="">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselLugares" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselLugares" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div class="info-box">
+          <p id="infoLugares">El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural.</p>
+          <p id="locLugares" class="location">📍 Cra. 57 #46c35, Fátima, Itagüí.</p>
+        </div>
+      </div>
+
+      <!-- QUÉ HACER -->
+      <div class="col-md-6 content-box">
+        <div class="section-header">
+          <span>¿Qué hacer?</span>
+          <span>Lugares</span>
+        </div>
+
+        <div id="carouselQueHacer" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-description="Visita el Parque Principal y disfruta de su ambiente cultural y gastronómico." data-location="📍 Parque Principal, Itagüí.">
+              <img src="img3.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Haz recorridos por el Museo Comunitario y conoce la historia local." data-location="📍 Museo Comunitario, Itagüí.">
+              <img src="img4.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Disfruta de caminatas ecológicas por los alrededores naturales." data-location="📍 Vereda El Ajizal, Itagüí.">
+              <img src="img5.jpg" alt="">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselQueHacer" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselQueHacer" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div class="info-box">
+          <p id="infoQueHacer">Visita el Parque Principal y disfruta de su ambiente cultural y gastronómico.</p>
+          <p id="locQueHacer" class="location">📍 Parque Principal, Itagüí.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FILA 2 ===== -->
+    <div class="row">
+
+      <!-- PLANES -->
+      <div class="col-md-6 content-box">
+        <div class="section-header">
+          <span>Planes</span>
+          <div>
+            <button class="btn btn-custom">Diurnos</button>
+            <button class="btn btn-custom">Nocturnos</button>
+          </div>
+        </div>
+
+        <div id="carouselPlanes" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-description="Recorrido por parques y cafés tradicionales." data-location="📍 Parque Obrero, Itagüí.">
+              <img src="img6.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Plan nocturno con música en vivo y luces en Ditaires." data-location="📍 Ditaires, Itagüí.">
+              <img src="img7.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Tour gastronómico por el sector Santa María." data-location="📍 Santa María, Itagüí.">
+              <img src="img8.jpg" alt="">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlanes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselPlanes" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div class="info-box">
+          <p id="infoPlanes">Recorrido por parques y cafés tradicionales.</p>
+          <p id="locPlanes" class="location">📍 Parque Obrero, Itagüí.</p>
+        </div>
+      </div>
+
+      <!-- EVENTOS -->
+      <div class="col-md-6 content-box">
+        <div class="section-header">
+          <div>
+            <button class="btn btn-custom">Senderismo</button>
+            <button class="btn btn-custom">Festivales</button>
+            <button class="btn btn-custom">Actividades</button>
+          </div>
+        </div>
+
+        <div id="carouselEventos" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-description="Caminatas ecológicas por rutas verdes." data-location="📍 Vereda Los Gómez, Itagüí.">
+              <img src="img9.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Festival de las Luces, tradición cada diciembre." data-location="📍 Parque del Artista, Itagüí.">
+              <img src="img10.jpg" alt="">
+            </div>
+
+            <div class="carousel-item" data-description="Feria de las Flores con música y cultura." data-location="📍 Centro Cultural Caribe, Itagüí.">
+              <img src="img11.jpg" alt="">
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselEventos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselEventos" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div class="info-box">
+          <p id="infoEventos">Caminatas ecológicas por rutas verdes.</p>
+          <p id="locEventos" class="location">📍 Vereda Los Gómez, Itagüí.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 TAGÜ - Proyecto turístico de Itagüí
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function actualizarDescripcion(idCarousel, idTexto, idLoc) {
+      const carousel = document.getElementById(idCarousel);
+      const texto = document.getElementById(idTexto);
+      const loc = document.getElementById(idLoc);
+
+      carousel.addEventListener('slide.bs.carousel', function (event) {
+        const nuevaDescripcion = event.relatedTarget.getAttribute('data-description');
+        const nuevaLoc = event.relatedTarget.getAttribute('data-location');
+        texto.textContent = nuevaDescripcion;
+        loc.textContent = nuevaLoc;
+      });
+    }
+
+    actualizarDescripcion('carouselLugares', 'infoLugares', 'locLugares');
+    actualizarDescripcion('carouselQueHacer', 'infoQueHacer', 'locQueHacer');
+    actualizarDescripcion('carouselPlanes', 'infoPlanes', 'locPlanes');
+    actualizarDescripcion('carouselEventos', 'infoEventos', 'locEventos');
+  </script>
 </body>
 </html>
