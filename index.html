@@ -1,11 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAGÜ</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    /* Estilos generales */
+    body {
+      background-color: #f5f1e7;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      background-color: #f5f1e7 !important;
+    }
+
+    .text-tagu {
+      color: #0E3322 !important; 
+    }
+
+    .nav-link {
+      color: #000 !important;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #e0dbd0;
+      border-radius: 8px;
+    }
+
+    /* Botones de la esquina derecha */
+    .btn-login,
+    .btn-register {
+      background-color: transparent;       
+      border: 2px solid #0E3322;           
+      color: #0E3322;                  
+      border-radius: 25px;
+      padding: 6px 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover de los botones */
+    .btn-login:hover,
+    .btn-register:hover {
+      background-color: #0E3322;
+      color: #fff;
+    }
+
+    /* Sección Itagüí */
+    .header-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .info-section {
+      background-color: #f8f6f1;
+      padding: 2rem 1rem;
+    }
+
+    .highlight-card {
+      background: #0E3322;
+      color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: left;
+    }
+
+    .highlight-card span {
+      color: #F5F5DC;
+      font-weight: bold;
+    }
+
+    .score {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #F5F5DC;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container-fluid">
+      
+      <!-- LOGO -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.jpeg" alt="Logo de TAGÜ" style="height: 40px; margin-right: 8px;">
+        <span class="fw-bold text-tagu">TAGÜ</span>
+      </a>
+
+      <!-- Botón menú móvil -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <!-- Enlaces -->
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link active" href="#">Restaurantes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ruta para llegar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Guía turística</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Lugares turísticos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Actividades y Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cultura y Historia</a></li>
+        </ul>
+
+        <!-- Botones -->
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login me-2">Iniciar sesión</button>
+          <button class="btn btn-register">Regístrate</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección principal -->
+  <div class="container text-center mt-5">
+    <h1 class="text-tagu fw-bold">Bienvenido a TAGÜ</h1>
+    <p class="text-muted">Explora los encantos turísticos, culturales y gastronómicos de Itagüí.</p>
+  </div>
+
+  <!-- Sección Itagüí entre los mejores -->
+  <section class="mt-5">
+    <!-- Imagen gris superior -->
+    <img src="itagui atardecer.jpeg" alt="Imagen superior" class="header-img">
+
+    <!-- Contenido principal -->
+    <div class="info-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Columna izquierda: banner azul -->
+          <div class="col-md-6 mb-3">
+            <div class="highlight-card">
+              <h4>¡ITAGÜÍ ENTRE LOS <span>MEJORES DEL PAÍS!</span></h4>
+              <p>en desempeño de la gestión pública</p>
+              <hr>
+              <p>Calificación:</p>
+              <div class="score">95.7/100</div>
+            </div>
+          </div>
+
+          <!-- Columna derecha: texto -->
+          <div class="col-md-6">
+            <p>
+              La medición, realizada por el Departamento Administrativo de la Función Pública en el marco del 
+              Formulario Único de Reporte de Avance de la Gestión (Furag), evalúa el desempeño de las entidades 
+              del orden nacional y territorial en siete dimensiones, entre ellas direccionamiento estratégico y 
+              planeación, control interno, talento humano y gestión del conocimiento.
+            </p>
+            <p>
+              “Nuestro objetivo siempre es fortalecer la capacidad institucional, orientada a una gestión eficiente 
+              y transparente de los recursos públicos. Este resultado refleja el compromiso y la articulación de 
+              nuestra administración con la ciudadanía, para que hoy la ciudad sea reconocida en el país como una 
+              entidad fortalecida y próspera en beneficio de todos los itagüiseños”, aseguró el alcalde Diego Torres.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+     <style>
+    .titulo-noticia {
+      color: #0E3322;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <!-- Sección de Noticias -->
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4 titulo-noticia">Noticias</h2>
+
+    <div class="row g-4">
+      <!-- Noticia 1 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen1.jpg" class="card-img-top" alt="Jaguarundí">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              En Itagüí celebran el avistamiento del jaguarundí, un felino poco conocido en Colombia
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 2 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen2.jpg" class="card-img-top" alt="Letras Itagüiseñas">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              Los escritores de Itagüí ahora tienen su espacio con “El inventario de letras”
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 3 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen3.jpg" class="card-img-top" alt="Congreso de Libertad Religiosa">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              Itagüí, sede del 1.er Congreso Metropolitano de Libertad Religiosa
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 4 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen4.jpg" class="card-img-top" alt="Mejor Icfes de Antioquia">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              El mejor Icfes de todo Antioquia está en un colegio público de Itagüí
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 5 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen5.jpg" class="card-img-top" alt="Alias Yeni capturada">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              Cayó alias Yeni, la ‘reina’ de las rentas criminales en Itagüí
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 6 -->
+      <div class="col-md-4">
+        <div class="card border-0">
+          <img src="ruta-de-tu-imagen6.jpg" class="card-img-top" alt="Entre Flores y Sombreros">
+          <div class="card-body px-0">
+            <h5 class="fw-bold titulo-noticia">
+              Entre Flores y Sombreros: un espectáculo de la Compañía de Danza de Itagüí para todo Antioquia
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
