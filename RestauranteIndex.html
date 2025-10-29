@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAGÜ</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Colores base */
+    :root {
+      --rojo: #671519;
+      --verde: #0E3322;
+      --amarillo: #D69517;
+      --fondo: #F2ECE1;
+    }
+
+    body {
+      background-color: var(--fondo);
+      font-family: 'Poppins', sans-serif;
+      color: var(--verde);
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--fondo) !important;
+    }
+
+    .text-tagu {
+      color: var(--verde) !important;
+    }
+
+    .nav-link {
+      color: #000 !important;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #e0dbd0;
+      border-radius: 8px;
+    }
+
+    /* Botones login/register */
+    .btn-login,
+    .btn-register {
+      background-color: transparent;
+      border: 2px solid var(--verde);
+      color: var(--verde);
+      border-radius: 25px;
+      padding: 6px 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login:hover,
+    .btn-register:hover {
+      background-color: var(--verde);
+      color: #fff;
+    }
+
+    /* Botones modo Día/Noche */
+    .modo-btn {
+      border: 2px solid var(--verde);
+      border-radius: 20px;
+      padding: 5px 15px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--verde);
+      background-color: transparent;
+      transition: 0.3s;
+      margin-left: 8px;
+    }
+
+    .modo-btn:hover {
+      background-color: var(--verde);
+      color: #fff;
+    }
+
+    .modo-toggle {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    /* Carrusel restaurantes */
+    .carousel-item img {
+      height: 350px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: var(--rojo);
+    }
+
+    /* Galería */
+    .gallery img {
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background-color: var(--verde);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.jpg" alt="Logo de TAGÜ" style="height: 40px; margin-right: 8px;">
+        <span class="fw-bold text-tagu">TAGÜ</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link active" href="#">Restaurantes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Ruta para llegar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Guía turística</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Lugares turísticos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Actividades y Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cultura y Historia</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <button class="btn btn-login me-2">Iniciar sesión</button>
+          <button class="btn btn-register">Regístrate</button>
+
+          <div class="modo-toggle">
+            <button id="modoDia" class="modo-btn">Día</button>
+            <button id="modoNoche" class="modo-btn">Noche</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado -->
+  <div class="container text-center mt-5">
+    <h1 class="fw-bold text-tagu">Bienvenido a TAGÜ</h1>
+    <p class="text-muted">Explora los encantos turísticos, culturales y gastronómicos de Itagüí.</p>
+  </div>
+
+  <!-- Sección: Mercados locales -->
+  <section id="mercados" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4" style="color: var(--verde);">Mercados locales</h2>
+
+      <!-- Carrusel Bootstrap -->
+      <div id="carouselRestaurantes" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <!-- Restaurante 1 -->
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="d-block w-100 rounded-3 shadow" alt="El Encanto del Sabor">
+              </div>
+              <div class="col-md-6 p-4">
+                <h3>El Encanto del Sabor</h3>
+                <p>Un rincón acogedor donde los aromas tradicionales se mezclan con recetas modernas. Su especialidad son las carnes ahumadas con salsa de maracuyá y el toque secreto de la casa.</p>
+                <p><strong>📍 Dirección:</strong> Cra 50 #45-12, Itagüí</p>
+                <p><strong>📞 Tel:</strong> +57 310 555 8901</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurante 2 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 order-md-2">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" class="d-block w-100 rounded-3 shadow" alt="Tierra y Brasa">
+              </div>
+              <div class="col-md-6 p-4 order-md-1">
+                <h3>Tierra y Brasa</h3>
+                <p>Inspirado en los sabores campesinos, ofrece una experiencia rústica con productos locales. Ideal para quienes aman el sabor del campo en cada bocado.</p>
+                <p><strong>📍 Dirección:</strong> Cl. 72 #50-10, Santa María</p>
+                <p><strong>📞 Tel:</strong> +57 311 444 6723</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurante 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1625948965722-3f7a4b89b5e1" class="d-block w-100 rounded-3 shadow" alt="Amaranto Fusión">
+              </div>
+              <div class="col-md-6 p-4">
+                <h3>Amaranto Fusión</h3>
+                <p>Donde la tradición se encuentra con la innovación. Platos coloridos, saludables y llenos de energía, preparados con ingredientes autóctonos.</p>
+                <p><strong>📍 Dirección:</strong> Cra 53 #31-22, Itagüí</p>
+                <p><strong>📞 Tel:</strong> +57 300 778 9912</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurante 4 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6 order-md-2">
+                <img src="https://images.unsplash.com/photo-1598515213906-4c92f8d3a0a5" class="d-block w-100 rounded-3 shadow" alt="Valhalla Street Food">
+              </div>
+              <div class="col-md-6 p-4 order-md-1">
+                <h3>Valhalla Street Food</h3>
+                <p>Un espacio joven y moderno, donde los sabores callejeros se mezclan con un toque nórdico. Hamburguesas, papas y salsas únicas que no olvidarás.</p>
+                <p><strong>📍 Dirección:</strong> Cl. 60 #48-09, Itagüí</p>
+                <p><strong>📞 Tel:</strong> +57 314 894 7006</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurantes" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: var(--verde); border-radius: 50%;"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurantes" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: var(--verde); border-radius: 50%;"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería fotográfica -->
+  <section class="py-5" style="background-color: #F2ECE1;">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4" style="color: var(--verde);">Galería de Itagüí</h2>
+      <div class="row gallery g-3 row-cols-2 row-cols-md-4">
+        <div class="col"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" class="img-fluid" alt="Foto 1"></div>
+        <div class="col"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" class="img-fluid" alt="Foto 2"></div>
+        <div class="col"><img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1" class="img-fluid" alt="Foto 3"></div>
+        <div class="col"><img src="https://images.unsplash.com/photo-1565958011705-44e211f07c1c" class="img-fluid" alt="Foto 4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 mt-5">
+    <small>© 2025 TAGÜ - Proyecto turístico de Itagüí</small>
+  </footer>
+
+  <!-- Script modo Día/Noche -->
+  <script>
+    const body = document.body;
+    document.getElementById('modoDia').addEventListener('click', () => {
+      body.style.backgroundColor = '#F2ECE1';
+      body.style.color = '#0E3322';
+    });
+    document.getElementById('modoNoche').addEventListener('click', () => {
+      body.style.backgroundColor = '#0E3322';
+      body.style.color = '#F2ECE1';
+    });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
