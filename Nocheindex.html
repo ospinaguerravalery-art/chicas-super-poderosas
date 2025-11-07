@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAGÜ - Día</title>
+  <title>TAGÜ - Noche</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     :root {
-      --rojo: #671519;
-      --verde: #0E3322;
-      --amarillo: #D69517;
-      --fondo: #F2ECE1;
+      --rojo: #E65C5C;
+      --verde: #A2D9A1;
+      --amarillo: #E9C46A;
+      --fondo: #0D0D0D;
+      --fondo-sec: #1C1C1C;
+      --texto: #F5F5F5;
     }
 
     body {
       background-color: var(--fondo);
       font-family: 'Poppins', sans-serif;
-      color: var(--verde);
+      color: var(--texto);
     }
 
     .navbar {
-      background-color: var(--fondo) !important;
+      background-color: var(--fondo-sec) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .text-tagu {
-      color: var(--verde) !important;
+      color: var(--amarillo) !important;
     }
 
     .nav-link {
-      color: #000 !important;
+      color: #fff !important;
       transition: 0.3s;
     }
 
     .nav-link:hover {
-      background-color: #e0dbd0;
+      background-color: rgba(255,255,255,0.1);
       border-radius: 8px;
     }
 
     .btn-login,
     .btn-register {
       background-color: transparent;
-      border: 2px solid var(--verde);
-      color: var(--verde);
+      border: 2px solid var(--amarillo);
+      color: var(--amarillo);
       border-radius: 25px;
       padding: 6px 15px;
       font-weight: 500;
@@ -51,25 +54,25 @@
 
     .btn-login:hover,
     .btn-register:hover {
-      background-color: var(--verde);
-      color: #fff;
+      background-color: var(--amarillo);
+      color: #000;
     }
 
     .modo-btn {
-      border: 2px solid var(--verde);
+      border: 2px solid var(--amarillo);
       border-radius: 20px;
       padding: 5px 15px;
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--verde);
+      color: var(--amarillo);
       background-color: transparent;
       transition: 0.3s;
       margin-left: 8px;
     }
 
     .modo-btn:hover {
-      background-color: var(--verde);
-      color: #fff;
+      background-color: var(--amarillo);
+      color: #000;
     }
 
     .modo-toggle {
@@ -81,10 +84,11 @@
     .carousel-item img {
       height: 350px;
       object-fit: cover;
+      border-radius: 10px;
     }
 
     h3 {
-      color: var(--rojo);
+      color: var(--amarillo);
     }
 
     .gallery img {
@@ -94,19 +98,19 @@
 
     .gallery img:hover {
       transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
     }
 
     footer {
-      background-color: var(--verde);
-      color: #fff;
+      background-color: var(--fondo-sec);
+      color: #ccc;
     }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="logo.jpg" alt="Logo de TAGÜ" style="height: 40px; margin-right: 8px;">
@@ -142,29 +146,29 @@
 
   <!-- Encabezado -->
   <div class="container text-center mt-5">
-    <h1 class="fw-bold text-tagu">Bienvenido a TAGÜ</h1>
-    <p class="text-muted">Explora los encantos turísticos, culturales y gastronómicos de Itagüí.</p>
+    <h1 class="fw-bold text-tagu">Explora Itagüí de Noche</h1>
+    <p style="color: #ccc;">La magia del municipio brilla bajo las luces. Descubre su lado nocturno, cultural y gastronómico.</p>
   </div>
 
   <!-- Sección: Mercados locales -->
   <section id="mercados" class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-4" style="color: var(--verde);">Mercados locales</h2>
+      <h2 class="text-center fw-bold mb-4 text-tagu">Mercados locales</h2>
 
-      <div id="carouselRestaurantes" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselRestaurantesNoche" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
           <!-- Restaurante 1 -->
           <div class="carousel-item active">
             <div class="row align-items-center">
               <div class="col-md-6">
-                <img src="sabor y humo.jpeg" class="d-block w-100 rounded-3 shadow" alt=" sabor y humo">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="d-block w-100 shadow" alt="El Encanto del Sabor">
               </div>
               <div class="col-md-6 p-4">
-                <h3>Sabor y humo</h3>
-                <p>Definitivamente donde uno menos lo espera hay una “joyitas escondidas” como este restaurante, donde Jhonny un ex entrenador personal, descubrió su amor por los asados y se creó una salsa texana deliciosa que es el toque secreto de su parrilla</p>
-                <p><strong>📍 Dirección:</strong> Cra 53 ab # 31-19</p>
-                <p><strong> Perfil</strong>@saboryhumo_ ⁣</p>
+                <h3>El Encanto del Sabor</h3>
+                <p>Sabores que iluminan la noche. Cocina moderna con esencia tradicional en el corazón de Itagüí.</p>
+                <p><strong>📍 Dirección:</strong> Cra 50 #45-12, Itagüí</p>
+                <p><strong>📞 Tel:</strong> +57 310 555 8901</p>
               </div>
             </div>
           </div>
@@ -173,13 +177,13 @@
           <div class="carousel-item">
             <div class="row align-items-center">
               <div class="col-md-6 order-md-2">
-                <img src="valhallar.jpeg" class="d-block w-100 rounded-3 shadow" alt=" valhallafries">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" class="d-block w-100 shadow" alt="Tierra y Brasa">
               </div>
               <div class="col-md-6 p-4 order-md-1">
-                <h3>Valhalla Fries</h3>
-                <p>Si van a comer algún día papas en Itagüí, amigos obviooooooo tienen que probar las de @valhallafries Muy ricas, crocantes y excelente cantidad de proteína 🤤</p>
-                <p><strong>📍 Dirección:</strong>  Cl. 72 50-115, Santa Maria, Itagüi</p>
-                <p><strong>📞 Tel:</strong> + 57 314 8947006 </p>
+                <h3>Tierra y Brasa</h3>
+                <p>Inspirado en la calidez de la noche antioqueña. Un espacio perfecto para compartir con amigos.</p>
+                <p><strong>📍 Dirección:</strong> Cl. 72 #50-10, Santa María</p>
+                <p><strong>📞 Tel:</strong> +57 311 444 6723</p>
               </div>
             </div>
           </div>
@@ -188,24 +192,24 @@
           <div class="carousel-item">
             <div class="row align-items-center">
               <div class="col-md-6">
-                <img src="fonda bitagui.jpeg" class="d-block w-100 rounded-3 shadow" alt=" fonda bitagui">
+                <img src="https://images.unsplash.com/photo-1625948965722-3f7a4b89b5e1" class="d-block w-100 shadow" alt="Amaranto Fusión">
               </div>
               <div class="col-md-6 p-4">
-                <h3>Fonda Bitaguí</h3>
-                <p>Los mejores ricones de Itagüi están llenos de sabor.</p>
-                <p><strong>📍 Dirección:</strong> Cra 51 #52 - 25, Itagüí</p>
-                <p><strong>📞 Tel:</strong> +57 3052233454</p>
+                <h3>Amaranto Fusión</h3>
+                <p>Experiencias gastronómicas con un ambiente cálido y luces suaves que crean magia nocturna.</p>
+                <p><strong>📍 Dirección:</strong> Cra 53 #31-22, Itagüí</p>
+                <p><strong>📞 Tel:</strong> +57 300 778 9912</p>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Controles -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurantes" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" style="background-color: var(--verde); border-radius: 50%;"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurantesNoche" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" style="background-color: var(--amarillo); border-radius: 50%;"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurantes" data-bs-slide="next">
-          <span class="carousel-control-next-icon" style="background-color: var(--verde); border-radius: 50%;"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurantesNoche" data-bs-slide="next">
+          <span class="carousel-control-next-icon" style="background-color: var(--amarillo); border-radius: 50%;"></span>
         </button>
       </div>
     </div>
@@ -214,19 +218,19 @@
   <!-- Galería -->
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center fw-bold mb-4" style="color: var(--verde);">Galería de comida itagüiseños</h2>
+    <h2 class="text-center fw-bold mb-4" style="color: var(--verde);">Galería Nocturna de Itagüí</h2>
     <div class="row gallery g-3 row-cols-2 row-cols-md-4">
       <div class="col">
-        <img src="foto carrusel dia 1.jpeg" class="img-fluid" alt="la parrilla">
+        <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac1" class="img-fluid" alt="Ciudad iluminada">
       </div>
       <div class="col">
-        <img src="foto carusel dia 2.jpeg" class="img-fluid" alt="la combi">
+        <img src="https://images.unsplash.com/photo-1565958011705-44e211f07c1c" class="img-fluid" alt="Restaurante nocturno">
       </div>
       <div class="col">
-        <img src="foto carrusel dia 3.jpeg" class="img-fluid" alt="sabor y humo">
+        <img src="https://images.unsplash.com/photo-1507914372368-bc3cf0a3d61f" class="img-fluid" alt="Calle iluminada Itagüí">
       </div>
       <div class="col">
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24" class="img-fluid" alt="Cultura y arte local">
+        <img src="https://images.unsplash.com/photo-1506086679526-a687b57e1a2e" class="img-fluid" alt="Ambiente nocturno">
       </div>
     </div>
   </div>
@@ -235,12 +239,12 @@
 
   <!-- Footer -->
   <footer class="text-center py-3 mt-5">
-    <small>© 2025 TAGÜ - Proyecto turístico de Itagüí</small>
+    <small>© 2025 TAGÜ - Itagüí brilla de noche</small>
   </footer>
 
   <script>
-    document.getElementById('modoNoche').addEventListener('click', () => {
-      window.location.href = 'noche.html';
+    document.getElementById('modoDia').addEventListener('click', () => {
+      window.location.href = 'dia.html';
     });
   </script>
 
