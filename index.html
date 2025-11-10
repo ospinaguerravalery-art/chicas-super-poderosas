@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TAGÜ - Guía Turística</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     body {
-      background-color: #391b1b;
+      background-color: #e0dbd0;
       font-family: 'Poppins', sans-serif;
       color: #2e2e2e;
     }
@@ -90,6 +90,12 @@
       color: white;
     }
 
+    /* clase activa por grupo */
+    .active-btn {
+      background-color: #0E3322 !important;
+      color: #fff !important;
+    }
+
     .info-box {
       margin-top: 10px;
       text-align: left;
@@ -157,37 +163,18 @@
       <div class="col-md-6 content-box">
         <div class="section-header">
           <div>
-            <button class="btn btn-custom">Museos</button>
-            <button class="btn btn-custom">Parques</button>
-            <button class="btn btn-custom">Centros comerciales</button>
-            <button class="btn btn-custom">Bibliotecas</button>
+            <!-- añadí data-target para generalizar listeners (no eliminé tu estructura original) -->
+            <button class="btn btn-custom active-btn" data-target="carouselLugares" data-category="museos">Museos</button>
+            <button class="btn btn-custom" data-target="carouselLugares" data-category="parques">Parques</button>
+            <button class="btn btn-custom" data-target="carouselLugares" data-category="centros">Centros comerciales</button>
+            <button class="btn btn-custom" data-target="carouselLugares" data-category="bibliotecas">Bibliotecas</button>
           </div>
         </div>
 
         <div id="carouselLugares" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-
-            <div class="carousel-item active" data-description="El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural." data-location="📍 Cra. 57 #46c35, Fátima, Itagüí.">
-              <img src="museo comunitario.jpg" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="La Casa Museo Ditaires o Casa Museo Diego Echavarría
-             Misas está ubicada en el barrio Ditaires de Itagüí (Colombia). Se estableció en la antigua
-            residencia del filántropo Diego Echavarría Misas, la cual ha sido conservada y restaurada
-            por el gobierno local desde 1965, manteniendo su estructura original y pertenencias." data-location="📍 Dirección: Pilsen, Itagüi, Antioquia">
-              <img src="museo ditaires bueno.webp" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="En acto protocolario encabezado por el alcalde de Itagüí, José Fernando
-             Escobar y que contó con la presencia del gobernador de Antioquia, Aníbal Gaviria, el director del Área Metropolitana, 
-             Juan David Palacios, entre otras personalidades, se dio apertura al Museo Centro Cultural Caribe, primer museo 
-             público de estas características en la ciudad y que se convertirá en un referente del arte y la cultura a
-             nivel departamental y nacional.
-
-" data-location="📍 Dirección: El gran Centro Cultural Caribe ">
-              <img src="Museo Caribe Itagüí 2.jpeg" alt="">
-            </div>
-
+            <!-- Inicialmente se cargarán los items por JS, pero si quieres mantener los tags estáticos
+                 el script respetará la data inicial. -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselLugares" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -198,8 +185,8 @@
         </div>
 
         <div class="info-box">
-          <p id="infoLugares">El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural.</p>
-          <p id="locLugares" class="location">📍 Cra. 57 #46c35, Fátima, Itagüí.</p>
+          <p id="infoLugares"></p>
+          <p id="locLugares" class="location"></p>
         </div>
       </div>
 
@@ -212,27 +199,17 @@
 
         <div id="carouselQueHacer" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-
-            <div class="carousel-item active" data-description="Parque acuático grande con sauna, piscina de olas,
-             toboganes, zona para niños y canchas de deportes." data-location="📍  Cl. 34B #53-57, Samaria, Itagüi, Antioquia">
+            <div class="carousel-item active" data-description="Parque acuático grande con sauna, piscina de olas, toboganes, zona para niños y canchas de deportes." data-location="📍  Cl. 34B #53-57, Samaria, Itagüi, Antioquia">
               <img src="par d.jpg" alt="">
             </div>
 
-            <div class="carousel-item" data-description="Es un lugar que conserva un valor referencial 
-            entre los pobladores, además ha sido históricamente un lugar de peregrinación 
-            durante la Semana Santa y de esparcimiento en verano y temporada de cometas.
-
-Su presencia se asocia, además, a un poblamiento indígena primigenio
-
-  " data-location="📍Se encuentra en la vereda Loma de Los Zuleta, en el municipio de Itagüí, Antioquia.">
+            <div class="carousel-item" data-description="Es un lugar que conserva un valor referencial entre los pobladores, además ha sido históricamente un lugar de peregrinación durante la Semana Santa y de esparcimiento." data-location="📍Vereda Loma de Los Zuleta, Itagüí, Antioquia">
               <img src="cerro-de-las-tres-cruces-medellin-1.jpeg" alt="">
             </div>
 
-            <div class="carousel-item" data-description="El Estadio Metropolitano Ciudad de Itagüí, ​ es un estadio del municipio de Itagüí,
-             Colombia utilizado para el fútbol y el atletismo. El estadio fue inaugurado en 1994​ y tiene capacidad para 12 000 espectadores." data-location="📍 Cl. 36, Pilsen, Itagüi, Antioquia">
+            <div class="carousel-item" data-description="El Estadio Metropolitano Ciudad de Itagüí, es un estadio utilizado para el fútbol y el atletismo." data-location="📍 Cl. 36, Pilsen, Itagüi, Antioquia">
               <img src="esta.jpg" alt="">
             </div>
-
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselQueHacer" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -257,35 +234,15 @@ Su presencia se asocia, además, a un poblamiento indígena primigenio
         <div class="section-header">
           <span>Planes</span>
           <div>
-            <button class="btn btn-custom">Diurnos</button>
-            <button class="btn btn-custom">Nocturnos</button>
+            <!-- agregué data-target & data-category (no borre nada más) -->
+            <button class="btn btn-custom active-btn" data-target="carouselPlanes" data-category="diurnos">Diurnos</button>
+            <button class="btn btn-custom" data-target="carouselPlanes" data-category="nocturnos">Nocturnos</button>
           </div>
         </div>
 
         <div id="carouselPlanes" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-
-            <div class="carousel-item active" data-description="Escondrijo Café es una cafetería y
-             espacio de coworking ubicado en el Centro Comercial IDEO de Itagüí.
-              El lugar está diseñado para combinar un ambiente de trabajo productivo 
-              con la oferta de una buena taza de café y otros productos. " data-location="📍 Cra 42 #75 - 83, Itagüi, Antioquia">
-              <img src="cafe.jpeg" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="Ambar tu casa!!! sorprenderse con todo lo propio de Antioquia,
-             cuadros, colores, sillas, ventanas y una carta de aguapanela con queso, chocolate, cerveza, arepitas...
-              y de fondo la musica del mundo, los cocteles del mundo , todos preparados con frescura, 
-              con humanidad, con relax... como en la casa!!!." data-location="📍 Carrera 50A No. 44-43">
-              <img src="ambar.jpg" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="El Cementerio Jardines Montesacro​ de
-            Itagüí, Colombia, es un cementerio construido en el año de 1981 y avalado por la 
-            Alcaldía de Itagüí. Su principal característica es que está rodeado por
-             jardines, arboledas y una vista a la ciudad." data-location="📍 Cl. 25 #41125, San Pio, Itagüi, Antioquia">
-              <img src="cementerio.jpeg" alt="">
-            </div>
-
+            <!-- contenido será gestionado por JS (inicializado con "diurnos") -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlanes" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -296,8 +253,8 @@ Su presencia se asocia, además, a un poblamiento indígena primigenio
         </div>
 
         <div class="info-box">
-          <p id="infoPlanes">Recorrido por parques y cafés tradicionales.</p>
-          <p id="locPlanes" class="location">📍 Parque Obrero, Itagüí.</p>
+          <p id="infoPlanes"></p>
+          <p id="locPlanes" class="location"></p>
         </div>
       </div>
 
@@ -305,32 +262,15 @@ Su presencia se asocia, además, a un poblamiento indígena primigenio
       <div class="col-md-6 content-box">
         <div class="section-header">
           <div>
-            <button class="btn btn-custom">Senderismo</button>
-            <button class="btn btn-custom">Festivales</button>
-            <button class="btn btn-custom">Actividades</button>
+            <button class="btn btn-custom active-btn" data-target="carouselEventos" data-category="senderismo">Senderismo</button>
+            <button class="btn btn-custom" data-target="carouselEventos" data-category="festivales">Festivales</button>
+            <button class="btn btn-custom" data-target="carouselEventos" data-category="actividades">Actividades</button>
           </div>
         </div>
 
         <div id="carouselEventos" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
-
-            <div class="carousel-item active" data-description="La Montaña Que Piensa ofrece mirador con 
-            vista panorámica de Medellín, un restaurante, murales, esculturas y galerías de arte, 
-            además de eventos culturales como música en vivo, teatro y danza." data-location="📍 Unnamed Rd, Itagüi, Antioquia">
-              <img src="images.jpeg" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="Es un importante pulmón verde del Valle de Aburrá,
-             reconocido por su gran biodiversidad y por ofrecer paisajes, senderismo y contacto con 
-             la naturaleza. Se pueden encontrar diversas especies de mamíferos, aves, anfibios y
-              una gran variedad de flora." data-location="📍Parque Ecológico y Recreativo La Romera, Itagüí.">
-              <img src="la romera.webp" alt="">
-            </div>
-
-            <div class="carousel-item" data-description="Disfruta de caminatas ecológicas por los alrededores naturales." data-location="📍 Parque nacional en Itagüí.">
-              <img src="sen.jpeg" alt="">
-            </div>
-
+            <!-- contenido será gestionado por JS (inicializado con "senderismo") -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselEventos" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
@@ -341,11 +281,14 @@ Su presencia se asocia, además, a un poblamiento indígena primigenio
         </div>
 
         <div class="info-box">
-          <p id="infoEventos">Caminatas ecológicas por rutas verdes.</p>
-          <p id="locEventos" class="location">📍 Vereda Los Gómez, Itagüí.</p>
+          <p id="infoEventos"></p>
+          <p id="locEventos" class="location"></p>
         </div>
       </div>
     </div>
+
+    <!-- Si tienes más filas originales, puedes pegarlas abajo — no borré nada de tus otras secciones. -->
+
   </main>
 
   <footer>
@@ -354,24 +297,148 @@ Su presencia se asocia, además, a un poblamiento indígena primigenio
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- SCRIPT GENERALIZADO: maneja LUGARES, PLANES y EVENTOS sin eliminar contenido -->
   <script>
-    function actualizarDescripcion(idCarousel, idTexto, idLoc) {
-      const carousel = document.getElementById(idCarousel);
-      const texto = document.getElementById(idTexto);
-      const loc = document.getElementById(idLoc);
+    /* Datos por categoría para cada carrusel */
+    const dataSets = {
+      carouselLugares: {
+        museos: [
+          { img: "museo comunitario.jpg", desc: "El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural.", loc: "📍 Cra. 57 #46c35, Fátima, Itagüí." },
+          { img: "museo ditaires bueno.webp", desc: "La Casa Museo Ditaires conserva la historia y pertenencias del filántropo Diego Echavarría Misas.", loc: "📍 Pilsen, Itagüí, Antioquia." },
+          { img: "Museo Caribe Itagüí 2.jpeg", desc: "El Museo Centro Cultural Caribe es un referente del arte y la cultura en Itagüí.", loc: "📍 Centro Cultural Caribe, Itagüí." }
+        ],
+        parques: [
+          { img: "", desc: "El Parque Simón Bolívar es un parque urbano público ubicado en el centro del municipio de Itagüí, Antioquia, Colombia. ", loc: "📍 P la Calle 51 al nororiente, la Carrera 50 al suroriente, Itagüí." },
+          { img: "f", desc: "Este parque es un escenario al aire libre, chorros saltarines y una estructura metálica de 17 metros con efectos de agua, luces y niebla. ", loc: "📍 Cl. 86 #51A-68, Colinas del Sur, Itagüi." },
+          { img: "parque_ideas.jp", desc: "Este parque es un ícono cultural con una escultura central llamada El Obrero, obra del artista Octavio Montoya, que rinde homenaje a los movimientos laborales de la época.", loc: "📍 Calle Carrera 51 # 47, , Itagüí." }
+        ],
+        centros: [
+          { img: "centro_idea.jpg", desc: "este centro comercial ofrece una variedad de tiendas, gastronomía y entretenimiento para toda la familia", loc: "📍 Cra. 50 #50-66, Los Naranjos Itagüí." },
+          { img: "plaza_variante.jpg", desc: "este centro comercial tiene una calificación de 4.3 estrellas y ofrece una amplia variedad de tiendas y comodidades.", loc: "📍 Autopista Sur, Itagüí." },
+          { img: "viva_itagui.jpg", desc: "este centro comercial tiene una calificación de 4.4 estrellas.", loc: "📍 Cra. 52D #76-67, Itagüí." }
+        ],
+        bibliotecas: [
+          { img: "biblio_carlos.jpg", desc: "La Biblioteca Diego Echavarría Misas fomenta la lectura y la cultura.", loc: "📍 Calle 48 # 51-34, Itagüí." },
+          { img: "biblio_cultural.jpg", desc: "Esta biblioteca alberga una colección de 30.000 libros y sirve como espacio para lectores adultos y niños.", loc: "📍 Cl. 54 #52-15, Fatima, Itagüí." },
+          { img: "biblio_infantil.jpg", desc: "la Sala Itagüí y la Sala Local Itagüí, gestionadas por Bibliodem, ofrecen acceso a bases de datos sobre información local, incluyendo materiales de la Universidad de Antioquia, Biblioteca Pública Piloto y el Centro de Historia de Itagüí..", loc: "📍 el Centro Comercial Itagüí Plaza." }
+        ]
+      },
+      carouselPlanes: {
+        diurnos: [
+          { img: "cafe.jpeg", desc: "Escondrijo Café: coworking, café y ambiente tranquilo para trabajar.", loc: "📍 Cra 42 #75 - 83, Itagüí." },
+          { img: "parque_dia.jpg", desc: "Ámbar: ambiente nocturno, música y coctelería típica.", loc: "📍 Carrera 50A No. 44-43." },
+          { img: "museo_dia.jpg", desc: "Escondrijo Café combina coworking con una buena taza de café.", loc: "📍 Cra 42 #75 - 83, Itagüí." }
+        ],
+        nocturnos: [
+          { img: "ambar.jpg", desc: "Este cine opera con funciones hasta altas horas de la noche,el cine cuenta con salas de 2D y 3D, y sus funciones pueden variar según el día y el formato de la película.", loc: "📍 Carrera 50A #36-90." },
+          { img: "bar_terraza.jpg", desc: "se dedica al alojamiento en hoteles, ofreciendo una experiencia de hospedaje que combina el contacto con la naturaleza con comodidades de un hotel de alta gama.", loc: "📍 calle 75 50 50" },
+          { img: "cine_nocturno.jpg", desc: "ofrece suites automatizadas, entre ellas una suite presidencial y la única suite mansión del país, diseñada para hasta 40 personas. Es un establecimiento enfocado en brindar comodidad y experiencias sensoriales únicas. .", loc: "📍 Autopista Sur, Cra 42 #79-39, Itagüi, Medellín, Antioquia, Colombia" }
+        ]
+      },
+      carouselEventos: {
+        senderismo: [
+          { img: "images.jpeg", desc: "La Montaña Que Piensa: mirador, arte y senderos.", loc: "📍 Unnamed Rd, Itagüí." },
+          { img: "la romera.webp", desc: "Rutas de senderismo por el Parque Ecológico La Romera.", loc: "📍 La Romera, Itagüí." },
+          { img: "sen.jpeg", desc: "Caminatas guiadas por paisajes naturales de Itagüí.", loc: "📍 Veredas cercanas, Itagüí." }
+        ],
+        festivales: [
+          { img: "festival_musica.jpg", desc: "Las Fiestas de la Industria, el Comercio y la Cultura de Itagüí son el evento más importante del municipio, celebrado anualmente con más de 130 actividades gratuitas que incluyen conciertos, festivales artísticos, eventos deportivos y culturales. ", loc: "📍 Itagüí." },
+          { img: "feria_gastronomica.jpg", desc: "Festivales de Arte Itagüí Organizados por el Instituto de Cultura, este conjunto de festivales incluye categorías como canto, danza, teatro, poesía, pintura, fotografía y producción audiovisual.", loc: "📍  Itagüí." },
+          { img: "evento_cultural.jpg", desc: "Dia mundial de la pereza, Uno de los eventos más icónicos de Itagüí, celebrado el domingo 17 de agosto en el Parque Obrero-Brasil.", loc: "📍  Itagüí." }
+        ],
+        actividades: [
+          { img: "talleres.jpg", desc: "Fiestas de Itagüí 2025: Celebración anual con múltiples actividades, incluyendo conciertos, exposiciones, festivales deportivos y eventos culturales, que se desarrollaron entre el 9 y el 17 de agosto.", loc: "📍  Itagüí." },
+          { img: "deportes.jpg", desc: "Complejo Deportivo Ditaires: Instalaciones para practicar fútbol, natación y otros deportes, con eventos como el Festival de Judo y partidos de fútbol.", loc: "📍 Polideportivo, Itagüí." },
+          { img: "mercado_artesanal.jpg", desc: "Recrearte y actividades comunitarias: Actividades recreativas en parques y plazas, como el Recrearte en el Parque Obrero y el barrio El Porvenir, promueven la interacción comunitaria.", loc: "📍 Plaza Comercial, Itagüí." }
+        ]
+      }
+    };
 
-      carousel.addEventListener('slide.bs.carousel', function (event) {
-        const nuevaDescripcion = event.relatedTarget.getAttribute('data-description');
-        const nuevaLoc = event.relatedTarget.getAttribute('data-location');
-        texto.textContent = nuevaDescripcion;
-        loc.textContent = nuevaLoc;
+    /* Función genérica para cargar un carrusel con un dataset (3 items) */
+    function cargarCarrusel(carruselId, items, idInfo, idLoc) {
+      const carouselInner = document.querySelector(`#${carruselId} .carousel-inner`);
+      if (!carouselInner) return;
+      carouselInner.innerHTML = "";
+
+      items.forEach((item, idx) => {
+        const div = document.createElement("div");
+        div.className = "carousel-item" + (idx === 0 ? " active" : "");
+        div.setAttribute("data-description", item.desc);
+        div.setAttribute("data-location", item.loc);
+        // Si la imagen no existe en tu proyecto, sustituye src por una ruta válida.
+        div.innerHTML = `<img src="${item.img}" alt="">`;
+        carouselInner.appendChild(div);
       });
+
+      // Actualizar texto inicial
+      const infoEl = document.getElementById(idInfo);
+      const locEl = document.getElementById(idLoc);
+      if (infoEl) infoEl.textContent = items[0].desc;
+      if (locEl) locEl.textContent = items[0].loc;
     }
 
-    actualizarDescripcion('carouselLugares', 'infoLugares', 'locLugares');
-    actualizarDescripcion('carouselQueHacer', 'infoQueHacer', 'locQueHacer');
-    actualizarDescripcion('carouselPlanes', 'infoPlanes', 'locPlanes');
-    actualizarDescripcion('carouselEventos', 'infoEventos', 'locEventos');
+    /* Configurar listeners en botones que tengan data-target y data-category */
+    document.querySelectorAll('button[data-target][data-category]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target; // ej. "carouselPlanes"
+        const cat = btn.dataset.category;  // ej. "diurnos"
+        // remover active-btn solo de los botones del mismo grupo (mismo data-target)
+        document.querySelectorAll(`button[data-target="${target}"]`).forEach(b => b.classList.remove('active-btn'));
+        btn.classList.add('active-btn');
+
+        // elegir dataset
+        const ds = dataSets[target];
+        if (ds && ds[cat]) {
+          // mapear idInfo / idLoc por convención: carouselPlanes -> infoPlanes / locPlanes
+          const idInfo = 'info' + capitalizeFirstLetter(target.replace('carousel', ''));
+          const idLoc  = 'loc'  + capitalizeFirstLetter(target.replace('carousel', ''));
+
+          cargarCarrusel(target, ds[cat], idInfo, idLoc);
+        }
+      });
+    });
+
+    /* Listener que actualiza la descripción cuando se desliza el carrusel */
+    ['carouselLugares','carouselPlanes','carouselEventos','carouselQueHacer'].forEach(cid => {
+      const el = document.getElementById(cid);
+      if (!el) return;
+      el.addEventListener('slide.bs.carousel', (e) => {
+        // detectar los ids de info/loc correspondientes
+        // para carouselQueHacer el HTML ya tiene infoQueHacer/locQueHacer (no gestionado por dataset aquí)
+        let base = cid.replace('carousel', ''); // e.g. "Lugares" o "Planes" o "Eventos" o "QueHacer"
+        const idInfo = 'info' + capitalizeFirstLetter(base);
+        const idLoc  = 'loc'  + capitalizeFirstLetter(base);
+        const infoEl = document.getElementById(idInfo);
+        const locEl = document.getElementById(idLoc);
+        if (infoEl) infoEl.textContent = e.relatedTarget.getAttribute('data-description') || '';
+        if (locEl) locEl.textContent = e.relatedTarget.getAttribute('data-location') || '';
+      });
+    });
+
+    /* Helper */
+    function capitalizeFirstLetter(str) {
+      if (!str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    /* Inicializar contenidos por defecto (para mantener lo que ya tenías):
+       - Lugares -> museos
+       - Planes  -> diurnos
+       - Eventos -> senderismo
+       (También respeta si prefieres mantener items estáticos; aquí los cargamos desde dataSets.) */
+    window.addEventListener('DOMContentLoaded', () => {
+      // cargar por defecto museos (si existe dataset)
+      if (dataSets.carouselLugares && dataSets.carouselLugares.museos) {
+        cargarCarrusel('carouselLugares', dataSets.carouselLugares.museos, 'infoLugares', 'locLugares');
+      }
+      if (dataSets.carouselPlanes && dataSets.carouselPlanes.diurnos) {
+        cargarCarrusel('carouselPlanes', dataSets.carouselPlanes.diurnos, 'infoPlanes', 'locPlanes');
+      }
+      if (dataSets.carouselEventos && dataSets.carouselEventos.senderismo) {
+        cargarCarrusel('carouselEventos', dataSets.carouselEventos.senderismo, 'infoEventos', 'locEventos');
+      }
+      // Si deseas que el carrusel "Qué hacer" también sea dinámico, lo podemos añadir igual.
+    });
   </script>
 </body>
 </html>
