@@ -83,6 +83,23 @@
       font-weight: bold;
       color: #F5F5DC;
     }
+
+    /* Noticias */
+    .titulo-noticia {
+      color: #0E3322;
+    }
+
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card-body {
+      background-color: #fff;
+      border-radius: 0 0 10px 10px;
+      padding: 1rem 1.2rem; /* separación del borde */
+    }
   </style>
 </head>
 
@@ -169,13 +186,6 @@
       </div>
     </div>
   </section>
-     <style>
-    .titulo-noticia {
-      color: #0E3322;
-    }
-  </style>
-</head>
-<body>
 
   <!-- Sección de Noticias -->
   <section class="container my-5">
@@ -186,7 +196,7 @@
       <div class="col-md-4">
         <div class="card border-0">
           <img src="el jaguarundi.png" class="card-img-top" alt="Jaguarundí">
-          <div class="card-body px-0">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
               En Itagüí celebran el avistamiento del jaguarundí, un felino poco conocido en Colombia
             </h5>
@@ -198,7 +208,7 @@
       <div class="col-md-4">
         <div class="card border-0">
           <img src="escritores.png" class="card-img-top" alt="Letras Itagüiseñas">
-          <div class="card-body px-0">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
               Los escritores de Itagüí ahora tienen su espacio con “El inventario de letras”
             </h5>
@@ -210,7 +220,7 @@
       <div class="col-md-4">
         <div class="card border-0">
           <img src="feria de innovacion.png" class="card-img-top" alt="feria de innovación estudiantil">
-          <div class="card-body px-0">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
               Una de las ferias de innovación estudiantil más grandes del país
             </h5>
@@ -221,10 +231,10 @@
       <!-- Noticia 4 -->
       <div class="col-md-4">
         <div class="card border-0">
-          <img src="supuestos duros de itagui.png" class="card-img-top" alt=" policia captura delincuentes">
-          <div class="card-body px-0">
+          <img src="supuestos duros de itagui.png" class="card-img-top" alt="policía captura delincuentes">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
-            Pedían 10 millones a un comerciante de Itagüí diciendo que eran los “duros” del sector, pero les cayó la Policía y pa' la cárcel
+              Pedían 10 millones a un comerciante de Itagüí diciendo que eran los “duros” del sector, pero les cayó la Policía y pa' la cárcel
             </h5>
           </div>
         </div>
@@ -234,9 +244,9 @@
       <div class="col-md-4">
         <div class="card border-0">
           <img src="subsidios para vivienda.png" class="card-img-top" alt="subsidios de vivienda">
-          <div class="card-body px-0">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
-            ¿No tiene vivienda propia? La Alcaldía de Itagüí entregará 102 subsidios para compra de vivienda nueva
+              ¿No tiene vivienda propia? La Alcaldía de Itagüí entregará 102 subsidios para compra de vivienda nueva
             </h5>
           </div>
         </div>
@@ -246,20 +256,37 @@
       <div class="col-md-4">
         <div class="card border-0">
           <img src="el sueño de tener casa.png" class="card-img-top" alt="familias con casa propia">
-          <div class="card-body px-0">
+          <div class="card-body">
             <h5 class="fw-bold titulo-noticia">
               Más de 100 familias cumplirán el sueño de tener casa propia en Itagüí
-
             </h5>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+ <!-- Sección Quiénes somos en TAGÜ -->
+<section style="background-color: #0E3322; color: #fff; width: 100%; padding: 100px 0; margin-top: 80px;">
+  <div class="text-center">
+    <h2 class="fw-bold mb-3" style="letter-spacing: 2px;">TAGÜ</h2>
+    <p class="mx-auto mb-5" style="max-width: 700px; font-size: 1rem;">
+      En <strong>TAGÜ</strong> exploramos y compartimos la esencia de Itagüí: su cultura, su gente y sus lugares más representativos.
+      Somos una ventana digital que conecta a la comunidad con su territorio.
+    </p>
+    <div class="d-flex justify-content-center gap-4">
+      <a href="#" class="text-light fs-2"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-light fs-2"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-light fs-2"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" class="text-light fs-2"><i class="bi bi-tiktok"></i></a>
+      <a href="#" class="text-light fs-2"><i class="bi bi-youtube"></i></a>
+    </div>
+  </div>
+</section>
   <!-- Pie de página -->
   <footer class="text-center mt-5 py-3 border-top">
     <small>© 2025 TAGÜ - Proyecto turístico de Itagüí</small>
   </footer>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
