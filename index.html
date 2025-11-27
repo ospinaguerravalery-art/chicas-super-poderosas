@@ -8,6 +8,27 @@
 
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <style>
+    /* --- HACER TODOS LOS CAJONES IGUAL DE ALTURA --- */
+.content-box {
+  height: 620px;     /* AJUSTA LA ALTURA QUE QUIERAS */
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel {
+  flex-grow: 1;
+  display: flex;
+}
+
+.carousel-inner {
+  flex-grow: 1;
+}
+
+.carousel-inner img {
+  height: 250px;      /* Mantiene proporción */
+  object-fit: contain;
+}
+
     body {
       background-color: #e0dbd0;
       font-family: 'Poppins', sans-serif;
@@ -49,7 +70,7 @@
     }
 
     .content-box {
-      border: 1px solid #cfcfcf;
+      border: 1px solid #f9f7f2;
       background-color: #f9f7f2;
       padding: 20px;
       border-radius: 8px;
@@ -60,7 +81,7 @@
     .section-header {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #f9f7f2;
       padding-bottom: 8px;
       margin-bottom: 15px;
       font-weight: 600;
@@ -75,7 +96,7 @@
     }
 
     .btn-custom {
-      background-color: #ddd;
+      background-color: #f9f7f2;
       color: #333;
       border: none;
       margin-right: 5px;
@@ -115,7 +136,7 @@
 
     footer {
       background-color: #f5f1e7;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid #f9f7f2;
       padding: 15px 0;
       text-align: center;
       font-size: 0.9rem;
@@ -303,9 +324,9 @@
     const dataSets = {
       carouselLugares: {
         museos: [
-          { img: "museo comunitario.jpg", desc: "El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural.", loc: "📍 Cra. 57 #46c35, Fátima, Itagüí." },
-          { img: "museo ditaires bueno.webp", desc: "La Casa Museo Ditaires conserva la historia y pertenencias del filántropo Diego Echavarría Misas.", loc: "📍 Pilsen, Itagüí, Antioquia." },
-          { img: "Museo Caribe Itagüí 2.jpeg", desc: "El Museo Centro Cultural Caribe es un referente del arte y la cultura en Itagüí.", loc: "📍 Centro Cultural Caribe, Itagüí." }
+          { img: "museo comunitario.jpg", desc: "El Museo Comunitario Graciliano Arcila Vélez impulsa la apropiación social del patrimonio cultural y natural, su horario es de lunes a jueves de 2:00pm a 5:00pm,viernes y sábado de 9:00am a 5:00pm", loc: "📍 Cra. 57 #46c35, Fátima, Itagüí." },
+          { img: "museo ditaires bueno.webp", desc: "La Casa Museo Ditaires conserva la historia y pertenencias del filántropo Diego Echavarría Misas, su horario es de de lunes a sábado, de 9:00am a 4:00pm.", loc: "📍 Pilsen, Itagüí, Antioquia." },
+          { img: "Museo Caribe Itagüí 2.jpeg", desc: "El Museo Centro Cultural Caribe es un referente del arte y la cultura en Itagüí, el horario habitual es de lunes a viernes de 8:00am a 5:00pm, y los sábados hasta el mediodía, pero puede cambiar durante eventos especiales.", loc: "📍 Centro Cultural Caribe, Itagüí." }
         ],
         parques: [
           { img: "simon bolivar.webp", desc: "El Parque Simón Bolívar es un parque urbano público ubicado en el centro del municipio de Itagüí, Antioquia, Colombia. ", loc: "📍 P la Calle 51 al nororiente, la Carrera 50 al suroriente, Itagüí." },
@@ -313,32 +334,32 @@
           { img: "obrero.webp", desc: "Parque el obrero: Este parque es un ícono cultural con una escultura central llamada El Obrero, obra del artista Octavio Montoya, que rinde homenaje a los movimientos laborales de la época.", loc: "📍 Calle Carrera 51 # 47, , Itagüí." }
         ],
         centros: [
-          { img: "plaza.webp", desc: "Centro Comercial Itagüí Plaza:este centro comercial ofrece una variedad de tiendas, gastronomía y entretenimiento para toda la familia", loc: "📍 Cra. 52 #calle 53, Itagüí, Antioquia." },
-          { img: "platino.webp", desc: "Centro Comercial Platino Plaza:ofrece una amplia gama de tiendas y servicios. ", loc: "📍 Cra. 52D #76-67, Santa Maria II, Itagüí, Antioquia" },
-          { img: "manzana.webp", desc: "Centro Comercial La Gran Manzana:ofrece una experiencia de compra con variedad de tiendas, restaurantes y servicios. ", loc: "📍 Cra. 49 #50a-20, Los Naranjos, Itagüí, Antioquia." }
+          { img: "plaza.webp", desc: "Centro Comercial Itagüí Plaza:este centro comercial ofrece una variedad de tiendas, gastronomía y entretenimiento para toda la familia, su horario es de lunes a domingo de 07:00am hasta las 8:00pm.", loc: "📍 Cra. 52 #calle 53, Itagüí, Antioquia." },
+          { img: "platino.webp", desc: "Centro Comercial Platino Plaza:ofrece una amplia gama de tiendas y servicios, su horadrio es de lunes a domingo desde las 09:00am hasta las 4:00pm.  ", loc: "📍 Cra. 52D #76-67, Santa Maria II, Itagüí, Antioquia" },
+          { img: "manzana.webp", desc: "Centro Comercial La Gran Manzana:ofrece una experiencia de compra con variedad de tiendas, restaurantes y servicios, su horario es de lunes a domingo, de 8:00am a 8:00pm. ", loc: "📍 Cra. 49 #50a-20, Los Naranjos, Itagüí, Antioquia." }
         ],
         bibliotecas: [
-          { img: "diego.webp", desc: "La Biblioteca Diego Echavarría Misas fomenta la lectura y la cultura.", loc: "📍 Calle 48 # 51-34, Itagüí." },
-          { img: "comfama.webp", desc: "La biblioteca de Comfama en Itagüí alberga una colección de 30.000 libros y sirve como espacio para lectores adultos y niños.", loc: "📍 Cl. 54 #52-15, Fatima, Itagüí." },
-          { img: "biblio.webp", desc: "la Sala Itagüí y la Sala Local Itagüí, gestionadas por Bibliodem, ofrecen acceso a bases de datos sobre información local, incluyendo materiales de la Universidad de Antioquia, Biblioteca Pública Piloto y el Centro de Historia de Itagüí..", loc: "📍 el Centro Comercial Itagüí Plaza." }
+          { img: "diego.webp", desc: "La Biblioteca Diego Echavarría Misas fomenta la lectura y la cultura, su horario es de lunes a viernes de 9:00am a 6:00pm, los sábados de 10:00am a 4:00pm y permanece cerrada los domingos. ", loc: "📍 Calle 48 # 51-34, Itagüí." },
+          { img: "comfama.webp", desc: "La biblioteca de Comfama en Itagüí alberga una colección de 30.000 libros y sirve como espacio para lectores adultos y niños, su horario es de Lunes a viernes de 7:30am a 5:00pm Sábados de 9:00am a 5:00pm", loc: "📍 Cl. 54 #52-15, Fatima, Itagüí." },
+          { img: "biblio.webp", desc: "la Sala Itagüí y la Sala Local Itagüí, gestionadas por Bibliodem, ofrecen acceso a bases de datos sobre información local, incluyendo materiales de la Universidad de Antioquia, Biblioteca Pública Piloto y el Centro de Historia de Itagüí.", loc: "📍 el Centro Comercial Itagüí Plaza." }
         ]
       },
       carouselPlanes: {
         diurnos: [
-          { img: "cafe.webp", desc: "Escondrijo Café: coworking, café y ambiente tranquilo para trabajar.", loc: "📍 Cra 42 #75 - 83, Itagüí." },
-          { img: "ambar.webp", desc: "Ámbar: ambiente nocturno, música y coctelería típica.", loc: "📍 Carrera 50A No. 44-43." },
-          { img: "aero.webp", desc: "Ditaires (plazoleta Chorritos):Parques Activos y Saludables Clases de rumba aeróbica gratuitas en diferentes zonas", loc: "📍 calle 36 entre carreras 53 y 61, en el sector de Portal de Ditaires, Itagüí." }
+          { img: "cafe.webp", desc: "Escondrijo Café: coworking, café y ambiente tranquilo para trabajar, su horario es de lunes a sabado de 9:00am a 6:00pm", loc: "📍 Cra 42 #75 - 83, Itagüí." },
+          { img: "ambar.webp", desc: "Ámbar: ambiente nocturno, música y coctelería típica, su horario es de lunes a sabado de 6:00pm a 12:00am", loc: "📍 Carrera 50A No. 44-43." },
+          { img: "aero.webp", desc: "Ditaires (plazoleta Chorritos):Parques Activos y Saludables Clases de rumba aeróbica gratuitas en diferentes zonas, su horario es de lunes a viernes a las 7:00 p.m", loc: "📍 calle 36 entre carreras 53 y 61, en el sector de Portal de Ditaires, Itagüí." }
         ],
         nocturnos: [
-          { img: "royal.webp", desc: "Royal Films - Arrayanes Plaza: Este cine opera con funciones hasta altas horas de la noche,el cine cuenta con salas de 2D y 3D, y sus funciones pueden variar según el día y el formato de la película.", loc: "📍 Carrera 50A #36-90." },
-          { img: "hotel.webp", desc: "Hotel Plaza Mayor Itagui:este hotel cuenta con dos zonas: Zona Tradicional (58 habitaciones cómodas) y Zona Moderna (27 habitaciones renovadas), pensadas para ofrecer comodidad y un ambiente contemporáneo.", loc: "📍 Cl. 84A ##1, Santa Maria, Itagüi, Antioquia." },
+          { img: "royal.webp", desc: "Royal Films - Arrayanes Plaza: Este cine opera con funciones hasta altas horas de la noche,el cine cuenta con salas de 2D y 3D, y sus funciones pueden variar según el día y el formato de la película, su horario es de Lunes a Domingo De 11:00am a 11:00pm.", loc: "📍 Carrera 50A #36-90." },
+          { img: "hotel.webp", desc: "Hotel Plaza Mayor Itagui:este hotel cuenta con dos zonas: Zona Tradicional (58 habitaciones cómodas) y Zona Moderna (27 habitaciones renovadas), pensadas para ofrecer comodidad y un ambiente contemporáneo, su horario es de 3:00pm - 8:00pm y la salida 00:00 - 12:30am.", loc: "📍 Cl. 84A ##1, Santa Maria, Itagüi, Antioquia." },
           { img: "pai.webp", desc: "Refugio de Dios Cabaña Glamping es una opción destacada en Itagüí para quienes buscan una experiencia de descanso, conexión espiritual y contacto con la naturaleza.s. .", loc: "📍 Vereda los Florianos, Santa Maria del Campo, Itagüi, Antioquia." }
         ]
       },
       carouselEventos: {
         senderismo: [
-          { img: "images.jpeg", desc: "La Montaña Que Piensa: mirador, arte y senderos.", loc: "📍 Unnamed Rd, Itagüí." },
-          { img: "la romera.webp", desc: "Rutas de senderismo por el Parque Ecológico La Romera.", loc: "📍 La Romera, Itagüí." },
+          { img: "images.jpeg", desc: "La Montaña Que Piensa: mirador, arte y senderos, su horario es de lunes a miércoles y domingo 12:00am, martes, jueves y viernes 2:00pm. ", loc: "📍 Unnamed Rd, Itagüí." },
+          { img: "la romera.webp", desc: "Rutas de senderismo por el Parque Ecológico La Romera, su horario es de lunes a domingo de 6:00am a 2:00pm", loc: "📍 La Romera, Itagüí." },
           { img: "sen.jpeg", desc: "Caminatas guiadas por paisajes naturales de Itagüí.", loc: "📍 Veredas cercanas, Itagüí." }
         ],
         festivales: [
